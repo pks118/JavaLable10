@@ -52,9 +52,9 @@ class Pryamougol extends Figura {
 class Nasled {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String [] type_Tryugol = {"равнобедренный", "остроуголный", "тупоугольный", "равносторонний", "равнобедренный", "разносторонний"};
+        String [] type_Tryugol = {"равнобедренный", "остроугольный", "тупоугольный", "равносторонний", "равнобедренный", "разносторонний"};
         String [] type_Krug = {"единичный", "вписанный", "описанный", "касательный"};
-        String [] type_Pryamougol = {"Прямоугольник", "Квадрат", "Ромб", "Параллелограмм"};
+        String [] type_Pryamougol = {"прямоугольник", "квадрат", "ромб", "параллелограмм"};
         Tryugol tr1 = new Tryugol();
         Tryugol tr2 = new Tryugol();
         Krug kr1 = new Krug();
@@ -69,7 +69,7 @@ class Nasled {
         tr2.height = inputZnach(sc, "высоту");
         tr2.style = type_Object(sc, type_Tryugol);
         System.out.println("Окружность 1");
-        kr1.width = inputZnach(sc, "ширину");
+        kr1.width = inputZnach(sc, "радиус");
         kr1.style = type_Object(sc, type_Krug);
         System.out.println("Четырехугольник 1");
         pr1.width = inputZnach(sc, "ширину");
@@ -99,7 +99,7 @@ class Nasled {
     private static double inputZnach(Scanner sc, String storona){
         while (true) {
             try {
-                System.out.print("Введите "+ storona +" треугольника:");
+                System.out.print("Введите "+ storona +":");
                 String input_w = sc.nextLine();
                 if(input_w.equals("y")) {
                     System.out.println("Выход из программы...");
@@ -113,7 +113,7 @@ class Nasled {
     }
     private static String type_Object(Scanner sc, String [] type_Object) {
         boolean flag = true;
-        System.out.println("Введите тип треугольника:");
+        System.out.println("Введите тип:");
         while (true) {
             String input_style = sc.nextLine();
             if(input_style.equals("y")) {
