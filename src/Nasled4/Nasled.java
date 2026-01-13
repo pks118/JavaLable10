@@ -6,6 +6,13 @@ import java.util.Scanner;
 class Figura {
     private double width;
     private double height;
+    Figura(double w, double h){
+        width = w;
+        height = h;
+    }
+    Figura(double r){
+        width = r;
+    }
     double getWidth() {
         return width;
     }
@@ -22,7 +29,10 @@ class Figura {
 
 class Tryugol extends Figura {
     String style;
-
+    Tryugol(double w, double h, String s){
+        super(w, h);
+        style = s;
+    }
     double area() {
         return getWidth() * getHeight() / 2;
     }
@@ -37,7 +47,7 @@ class Tryugol extends Figura {
 class Krug extends Figura {
     private String style;
     Krug(String s, double r){
-        setWidth(r);
+        super(r);
         style = s;
     }
     double area() {
@@ -51,8 +61,7 @@ class Krug extends Figura {
 class Pryamougol extends Figura {
     private String style;
     Pryamougol(String s, double w, double h){
-        setWidth(w);
-        setHeight(h);
+        super(w,h);
         style = s;
     }
     double area() {
@@ -66,11 +75,11 @@ class Pryamougol extends Figura {
 class Nasled {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String [] type_Tryugol = {"равнобедренный", "остроуголный", "тупоугольный", "равносторонний", "равнобедренный", "разносторонний"};
-        String [] type_Krug = {"единичный", "вписанный", "описанный", "касательный"};
-        String [] type_Pryamougol = {"Прямоугольник", "Квадрат", "Ромб", "Параллелограмм"};
-        Tryugol tr1 = new Tryugol();
-        Tryugol tr2 = new Tryugol();
+        final String [] type_Tryugol = {"равнобедренный", "остроуголный", "тупоугольный", "равносторонний", "равнобедренный", "разносторонний"};
+        final String [] type_Krug = {"единичный", "вписанный", "описанный", "касательный"};
+        final String [] type_Pryamougol = {"прямоугольник", "пвадрат", "ромб", "параллелограмм"};
+        Tryugol tr1 = new Tryugol(inputZnach(sc, "ширину"), inputZnach(sc, "высоту"), type_Object(sc, type_Pryamougol));
+        Tryugol tr2 = new Tryugol(inputZnach(sc, "ширину"), inputZnach(sc, "высоту"), type_Object(sc, type_Pryamougol));
         System.out.println("Выход из программы 'y'");
         System.out.println("Треугольник 1");
         tr1.setWidth(inputZnach(sc, "ширину"));
