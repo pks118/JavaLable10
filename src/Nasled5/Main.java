@@ -52,7 +52,6 @@ class GroundVehicle extends Vehicle {
 class Car extends GroundVehicle {
     private int obem;
     private int rasxod;
-
     Car(int maxSpeed, String toplivo, int koles, int pass, int rasxod, int obem) {
         super(maxSpeed, toplivo, koles, pass);
         this.obem = obem;
