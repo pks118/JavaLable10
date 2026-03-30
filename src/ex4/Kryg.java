@@ -1,13 +1,13 @@
 package ex4;
 
-class Kryg4 extends Figure4 {
+class Kryg extends Figure {
     String style;
 
     double area() {
         return Math.pow(width, 2) * Math.PI;
     }
 
-    Kryg4(String s, double r) {
+    Kryg(String s, double r) {
         super(r);
         style = s;
     }
@@ -15,7 +15,7 @@ class Kryg4 extends Figure4 {
     double perimetr() {
         return width * Math.PI;
     }
-    void show1() {
+    void show() {
         System.out.println("Круг. Радиус круга " + width);
     }
 }

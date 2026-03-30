@@ -1,12 +1,12 @@
-package Nasled5;
+package ex5;
 
 import java.util.Scanner;
 
-class Vehicle {
+class Transport {
     private int maxSpeed;
     private String toplivo;
 
-    Vehicle(int maxSpeed, String toplivo) {
+    Transport(int maxSpeed, String toplivo) {
         this.maxSpeed = maxSpeed;
         this.toplivo = toplivo;
     }
@@ -24,11 +24,11 @@ class Vehicle {
     }
 }
 
-class GroundVehicle extends Vehicle {
+class NazemniTransport extends Transport {
     private int koles;
     private int pass;
 
-    GroundVehicle(int maxSpeed, String toplivo, int koles, int pass) {
+    NazemniTransport(int maxSpeed, String toplivo, int koles, int pass) {
         super(maxSpeed, toplivo);
         this.koles = koles;
         this.pass = pass;
@@ -49,7 +49,7 @@ class GroundVehicle extends Vehicle {
     }
 }
 
-class Car extends GroundVehicle {
+class Car extends NazemniTransport {
     private int obem;
     private int rasxod;
     Car(int maxSpeed, String toplivo, int koles, int pass, int rasxod, int obem) {
@@ -110,17 +110,17 @@ public class Main {
         int pass = inputInt(sc, "пассажиров (кол-во)");
         int rasxod = inputInt(sc, "расход (л)");
         int obem = inputInt(sc, "объем (см3)");
-        Vehicle vehicle = new Vehicle(maxSpeed, toplivo);
-        GroundVehicle landVehicle = new GroundVehicle(maxSpeed, toplivo, koles, pass);
+        Transport transport = new Transport(maxSpeed, toplivo);
+        NazemniTransport landVehicle = new NazemniTransport(maxSpeed, toplivo, koles, pass);
         Car car = new Car(maxSpeed, toplivo, koles, pass, rasxod, obem);
         System.out.println("Vehicle");
-        vehicle.showInfo();
+        transport.showInfo();
         System.out.println("\nGroundVehicle");
         landVehicle.showInfo();
         System.out.println("\nCar");
         car.showInfo();
         System.out.println("Запас хода: " + car.range() + " км");
-        System.out.println("Нужно топлива на 300 км: " + car.rashod(300) + " л");
+        System.out.println("Расход топлива на 300 км: " + car.rashod(300) + " л");
     }
 }
 

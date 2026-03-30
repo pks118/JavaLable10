@@ -1,28 +1,26 @@
-package ex1;
+package ex2;
 
 class Pryamoygolnik extends Figure {
     String style;
-
     Pryamoygolnik(double a, double b, String s) {
-        width = a;
-        height = b;
+        setWidth(a);
+        setHeight(b);
         style = s;
     }
 
     double area() {
-        return width * height;
+        return getWidth() * getHeight();
     }
 
     double perimetr() {
-        return 2 * (width + height);
+        return 2 * (getWidth() + getHeight());
     }
 
     void show() {
-        System.out.println("===== Прямоугольник =====" + "\nДлина: " + height + "\nШирина: " + width);
+        System.out.println("===== Прямоугольник =====" + "\nДлина: " + getHeight() + "\nШирина: " + getWidth());
         System.out.println("Периметр: " + perimetr() + "\nПлощадь: " + area());
-        System.out.println("Тип прямоугольникка: " + style);
+        System.out.println("Тип прямоугольникка: "+style);
     }
-
 
     public static Pryamoygolnik toPryamoygolnikOrNull(double a, double b, String s) {
         if (a > 0 && b > 0)

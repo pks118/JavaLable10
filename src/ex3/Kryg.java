@@ -1,21 +1,21 @@
-package ex1;
+package ex3;
 
 class Kryg extends Figure {
     Kryg(double radius) {
-        width = radius;
+        setWidth(radius);
     }
     String style;
 
     double area() {
-        return Math.PI * width * width;
+        return Math.PI * getWidth() * getWidth();
     }
 
     double perimetr() {
-        return 2 * width * Math.PI;
+        return 2 * getWidth() * Math.PI;
     }
 
     void show() {
-        System.out.println("===== Круг =====" + "\nРадиус: " + width);
+        System.out.println("===== Круг =====" + "\nРадиус: " + getWidth());
         System.out.println("Периметр: " + perimetr() + "\nПлощадь: " + area());
     }
 

@@ -4,7 +4,7 @@ class Figure {
     double width;
     double height;
 
-    void show1() {
+    void show() {
         System.out.println("Ширина и высота " + width + " и " + height);
     }
 }

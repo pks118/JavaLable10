@@ -1,31 +1,31 @@
 package ex4;
 
-class Treygolnik4 extends Figure4 {
+class Treygolnik extends Figure {
     protected String style;
-    private double storona3;
-    Treygolnik4(double w, double h, double a) {
+    private double stor;
+    Treygolnik(double w, double h, double a) {
         super(w, h);
-        storona3 = a;
+        stor = a;
         style = checkType();
     }
 
     String checkType() {
-        if (width==height && width==storona3)
+        if (width==height && width== stor)
             return "Равносторонний треугольник";
-        else if ((width==height && width!=storona3) || (height==storona3 && width!=height) || (width==storona3 && height!=storona3))
+        else if (width == height || height == stor || width == stor)
             return "Равнобедренный треугольник";
         else return "Разносторонний треугольник";
     }
 
     double perimetr() {
-        return width + height + storona3;
+        return width + height + stor;
     }
 
     double area() {
-        return Math.sqrt(perimetr() * (perimetr() - width) * (perimetr() - height) * (perimetr() - storona3));
+        return Math.sqrt(perimetr() * (perimetr() - width) * (perimetr() - height) * (perimetr() - stor));
     }
 
-    void show1() {
+    void show() {
         System.out.println("Фигура: " +checkType() + ". Площадь: "+area() + ". Периметр: "+perimetr());
     }
 }
