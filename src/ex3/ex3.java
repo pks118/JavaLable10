@@ -6,14 +6,16 @@ public class ex3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("====== Прямоугольник ======");
-        System.out.print("Введите ширину прямоугольника: ");
+        System.out.println("====== Четырехугольник ======");
+        System.out.print("Введите ширину четырехугольника: ");
         double width = sc.nextDouble();
-        System.out.print("Введите высоту прямоугольника: ");
+        System.out.print("Введите высоту четырехугольника: ");
         double height = sc.nextDouble();
-        System.out.print("Введите тип прямоугольника:");
-        String style = sc.nextLine();
-        Pryamoygolnik pr1 = Pryamoygolnik.toPryamoygolnikOrNull(width, height, style);
+        System.out.print("Введите сторону a четырехугольника: ");
+        double a = sc.nextDouble();
+        System.out.print("Введите сторону b четырехугольника: ");
+        double b = sc.nextDouble();
+        Chetirehugolnyk pr1 = Chetirehugolnyk.toChetirehugolnykOrNull(width, height, a, b);
         sc.nextLine();
         if (pr1 != null) {
             pr1.show();
